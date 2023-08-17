@@ -1,0 +1,7 @@
+# In this feel, the following Squads needs to be replaced with the real name of the Teams
+        # CODEOWNERS
+        * @org-rodriguez-conva/Squad_Administrators @org-rodriguez-conva/Squad_Douro @org-rodriguez-conva/Squad_Congo_Engineer @org-rodriguez-conva/Squad_Congo_Solutions_Engineer @org-rodriguez-conva/Squad_Congo_Agile_Coach
+
+        # For Master Branch
+        /master/ @org-rodriguez-conva/Squad_Administrators @org-rodriguez-conva/Squad_Douro  @org-rodriguez-conva/Squad_Congo_Solutions_Engineer @org-rodriguez-conva/Squad_Congo_Agile_Coach
+        
