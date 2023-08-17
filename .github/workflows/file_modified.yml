@@ -1,0 +1,30 @@
+
+        name: Reject Pull Request if File Modified
+        on:
+        pull_request_target:
+            types: [opened, reopened]
+
+
+        jobs:
+        validate-file-modification:
+            runs-on: ubuntu-latest
+            steps:
+            - name: Checkout code
+                uses: actions/checkout@v2  # This fetches your repository's code
+
+            - name: Check CODEOWNERS Modification
+                run: |
+                BASE_BRANCH="development"
+                HEAD_BRANCH="${{ github.head_ref }}"
+
+                # Fetch the base branch and set up a tracking branch
+                git fetch origin $BASE_BRANCH:$BASE_BRANCH
+                git branch --set-upstream-to=origin/$BASE_BRANCH $BASE_BRANCH
+                git checkout $HEAD_BRANCH
+
+                # Compare the changes between base and head branches
+                if git diff --name-only $BASE_BRANCH $HEAD_BRANCH | grep "CODEOWNERS"; then
+                    echo "CODEOWNERS file has been modified. Rejecting the pull request."
+                    exit 1
+                fi
+    
