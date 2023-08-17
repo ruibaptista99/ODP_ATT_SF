@@ -1,0 +1,19 @@
+
+        # Ignore compiled files
+        *.class
+        *.o
+        *.pyc
+
+        # Ignore dependencies
+        node_modules/
+        bower_components/
+
+        # Ignore virtual environments
+        venv/
+        env/
+
+        # Ignore README and CODEOWNERS files
+        README.md
+
+        # Add more patterns as needed
+        
